@@ -1,26 +1,33 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React from "react";
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+class App extends React.Component {
+  constructor(props) {
+    console.log("constructor Created>>");
+    super(props);
+    this.state = {
+      count: 0,
+    };
+  }
+
+  componentDidMount() {
+    console.log("component mounted>>");
+  }
+
+  RenderInput = (item) => {
+    return <div>{item}</div>;
+  };
+  render() {
+    console.log("render created>>");
+    // console.log(this.state.count);
+
+    return (
+      <div>
+        {this.state.count}
+        <button onClick={() => this.setState({ count: this.state.count + 1 })}>
+          {xyz.map((item) => this.RenderInput(item))}
+        </button>
+      </div>
+    );
+  }
 }
-
 export default App;
